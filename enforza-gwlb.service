@@ -1,0 +1,11 @@
+[Unit]
+Description=AWS GWLB Tunnel Handler
+After=network.target
+
+[Service]
+ExecStart=/root/aws-gateway-load-balancer-tunnel-handler/gwlbtun -c /root/aws-gateway-load-balancer-tunnel-handler/enforza-aws-gwlb-initialisation.sh -p 6082
+Restart=always
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
